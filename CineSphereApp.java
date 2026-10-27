@@ -257,10 +257,15 @@ public class CineSphereApp {
       display:grid; grid-template-columns: 1fr 1fr; gap:12px; box-shadow: 0 0 45px rgba(20,184,166,0.18);
     }
     .rack-card {
-      background: #0d1f23; border-radius:8px; height:150px; display:flex; flex-direction:column; justify-content:flex-end;
-      padding:12px; font-weight:700; font-size:0.85rem; border:1px solid #115e59; cursor:pointer; transition:0.2s;
+      border-radius:8px; height:150px; display:flex; flex-direction:column; justify-content:flex-end;
+      padding:14px; font-weight:700; font-size:0.85rem; border:1px solid #115e59; cursor:pointer; transition:0.2s;
+      position:relative; overflow:hidden;
     }
-    .rack-card:hover { border-color:#2dd4bf; transform:scale(1.02); }
+    .rack-card:nth-child(1) { background: linear-gradient(180deg, rgba(30,27,75,0.7) 0%, #020617 100%), radial-gradient(circle at 80% 20%, #f97316 0%, transparent 60%); }
+    .rack-card:nth-child(2) { background: linear-gradient(180deg, rgba(4,47,46,0.7) 0%, #083344 100%), radial-gradient(circle at 80% 20%, #38bdf8 0%, transparent 60%); }
+    .rack-card:nth-child(3) { background: linear-gradient(180deg, rgba(69,26,3,0.7) 0%, #1c1917 100%), radial-gradient(circle at 80% 20%, #f59e0b 0%, transparent 60%); }
+    .rack-card:nth-child(4) { background: linear-gradient(180deg, rgba(80,7,36,0.7) 0%, #1e1b4b 100%), radial-gradient(circle at 80% 20%, #ec4899 0%, transparent 60%); }
+    .rack-card:hover { border-color:#2dd4bf; transform:scale(1.03); box-shadow: 0 4px 20px rgba(45,212,191,0.25); }}
     .filter-bar { display:flex; gap:14px; margin-bottom:24px; flex-wrap:wrap; }
     .search-input { flex:1; min-width:240px; padding:10px 16px; background:var(--card-bg); border:1px solid var(--card-border); border-radius:6px; color:#fff; font-size:0.9rem; }
     .filter-select { padding:10px 16px; background:var(--card-bg); border:1px solid var(--card-border); border-radius:6px; color:#fff; font-size:0.9rem; }
