@@ -257,15 +257,13 @@ public class CineSphereApp {
       display:grid; grid-template-columns: 1fr 1fr; gap:12px; box-shadow: 0 0 45px rgba(20,184,166,0.18);
     }
     .rack-card {
-      border-radius:8px; height:150px; display:flex; flex-direction:column; justify-content:flex-end;
-      padding:14px; font-weight:700; font-size:0.85rem; border:1px solid #115e59; cursor:pointer; transition:0.2s;
-      position:relative; overflow:hidden;
+      position: relative; overflow: hidden; border-radius: 8px; height: 160px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 14px; font-weight: 700; font-size: 0.85rem; border: 1px solid #115e59;
+      cursor: pointer; transition: 0.2s;
     }
-    .rack-card:nth-child(1) { background: linear-gradient(180deg, rgba(30,27,75,0.7) 0%, #020617 100%), radial-gradient(circle at 80% 20%, #f97316 0%, transparent 60%); }
-    .rack-card:nth-child(2) { background: linear-gradient(180deg, rgba(4,47,46,0.7) 0%, #083344 100%), radial-gradient(circle at 80% 20%, #38bdf8 0%, transparent 60%); }
-    .rack-card:nth-child(3) { background: linear-gradient(180deg, rgba(69,26,3,0.7) 0%, #1c1917 100%), radial-gradient(circle at 80% 20%, #f59e0b 0%, transparent 60%); }
-    .rack-card:nth-child(4) { background: linear-gradient(180deg, rgba(80,7,36,0.7) 0%, #1e1b4b 100%), radial-gradient(circle at 80% 20%, #ec4899 0%, transparent 60%); }
-    .rack-card:hover { border-color:#2dd4bf; transform:scale(1.03); box-shadow: 0 4px 20px rgba(45,212,191,0.25); }}
+    .rack-card:hover { border-color: #2dd4bf; transform: scale(1.03); box-shadow: 0 4px 20px rgba(45,212,191,0.25); }
+    .rack-card .rack-content { position: relative; z-index: 3; }
     .filter-bar { display:flex; gap:14px; margin-bottom:24px; flex-wrap:wrap; }
     .search-input { flex:1; min-width:240px; padding:10px 16px; background:var(--card-bg); border:1px solid var(--card-border); border-radius:6px; color:#fff; font-size:0.9rem; }
     .filter-select { padding:10px 16px; background:var(--card-bg); border:1px solid var(--card-border); border-radius:6px; color:#fff; font-size:0.9rem; }
@@ -391,20 +389,36 @@ public class CineSphereApp {
         </div>
         <div class="poster-rack">
           <div class="rack-card" onclick="openMovieDetail(101)">
-            <div>INTERSTELLAR ODYSSEY</div>
-            <small style="color:var(--text-muted)">9.1 IMDB - SCI-FI</small>
+            <svg class="poster-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hg101" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e1b4b"/><stop offset="50%" stop-color="#431407"/><stop offset="100%" stop-color="#020617"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#hg101)"/><circle cx="200" cy="180" r="80" fill="#f97316" opacity="0.8"/><circle cx="200" cy="180" r="120" fill="#fbbf24" opacity="0.2"/><path d="M0,240 Q100,200 200,240 T400,240 L400,300 L0,300 Z" fill="#0f172a"/></svg>
+            <div class="poster-overlay"></div>
+            <div class="rack-content">
+              <div>INTERSTELLAR ODYSSEY</div>
+              <small style="color:var(--text-muted)">9.1 IMDB &bull; SCI-FI</small>
+            </div>
           </div>
           <div class="rack-card" onclick="openMovieDetail(102)">
-            <div>NEON VELOCITY</div>
-            <small style="color:var(--text-muted)">8.7 IMDB - ACTION</small>
+            <svg class="poster-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hg102" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#042f2e"/><stop offset="50%" stop-color="#0f172a"/><stop offset="100%" stop-color="#083344"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#hg102)"/><circle cx="300" cy="90" r="45" fill="#38bdf8" opacity="0.7"/><polygon points="200,80 230,160 170,160" fill="#059669" opacity="0.9"/></svg>
+            <div class="poster-overlay"></div>
+            <div class="rack-content">
+              <div>NEON VELOCITY</div>
+              <small style="color:var(--text-muted)">8.7 IMDB &bull; ACTION</small>
+            </div>
           </div>
           <div class="rack-card" onclick="openMovieDetail(103)">
-            <div>SHADOWS OF VELVET</div>
-            <small style="color:var(--text-muted)">8.4 IMDB - DRAMA</small>
+            <svg class="poster-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hg103" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#451a03"/><stop offset="50%" stop-color="#78350f"/><stop offset="100%" stop-color="#1c1917"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#hg103)"/><circle cx="150" cy="120" r="50" fill="#eab308" opacity="0.3"/><circle cx="250" cy="140" r="60" fill="#f59e0b" opacity="0.3"/></svg>
+            <div class="poster-overlay"></div>
+            <div class="rack-content">
+              <div>SHADOWS OF VELVET</div>
+              <small style="color:var(--text-muted)">8.4 IMDB &bull; DRAMA</small>
+            </div>
           </div>
           <div class="rack-card" onclick="openMovieDetail(104)">
-            <div>CHRONO PARADOX 2099</div>
-            <small style="color:var(--accent-amber)">UPCOMING</small>
+            <svg class="poster-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="hg104" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#500724"/><stop offset="50%" stop-color="#030712"/><stop offset="100%" stop-color="#1e1b4b"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#hg104)"/><line x1="50" y1="300" x2="180" y2="100" stroke="#ec4899" stroke-width="3" opacity="0.8"/><rect x="180" y="80" width="40" height="180" fill="#090d16" stroke="#f43f5e" stroke-width="1.5"/></svg>
+            <div class="poster-overlay"></div>
+            <div class="rack-content">
+              <div>CHRONO PARADOX 2099</div>
+              <small style="color:var(--accent-amber)">UPCOMING</small>
+            </div>
           </div>
         </div>
       </div>
